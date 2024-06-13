@@ -1,0 +1,7 @@
+{
+    "dir":"D:\\Python",
+    "disallow_dir_scan":[
+        "D:\\Python\\Project\\cq-fw\\log",
+        "D:\\Python\\Project\\Face\\datawajah"
+    ]
+}
