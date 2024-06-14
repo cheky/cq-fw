@@ -1,7 +1,7 @@
 {
-    "dir":"D:\\Python",
+    "dir":"/var/www/html",
     "disallow_dir_scan":[
-        "D:\\Python\\Project\\cq-fw\\log",
-        "D:\\Python\\Project\\Face\\datawajah"
+	    "/var/www/html/files",
+        "/var/www/html/vendor/bin"
     ]
 }

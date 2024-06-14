@@ -3,7 +3,7 @@ import os,mimetypes,json
 #init current dir
 conf_path=os.getcwd()
 # Opening JSON file
-conf_json=open(conf_path+"\config.json")
+conf_json=open(conf_path+"/config.json")
 #returns JSON object as a dictionary
 conf=json.load(conf_json)
 #init path
@@ -12,8 +12,13 @@ all_files=[]
 for root,dirs,files in os.walk(curr_path):
     if len(files)>0:
         for file in files:
-            if root not in conf["disallow_dir_scan"]:
-                fullpath=root+"\\"+file
+            disallow=False
+            for not_allowed in conf["disallow_dir_scan"]:
+                if not_allowed==root[0:len(not_allowed)]:
+                    disallow=True
+
+            if disallow==False:
+                fullpath=root+"/"+file
                 all_files.append({
                     "fullpath":fullpath,
                     "created":os.path.getctime(fullpath),
